@@ -1,0 +1,48 @@
+.container{
+    height: 100%;
+    background-image: url(/src/images/login-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-position: top;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:-1;
+    image-rendering: pixelated;
+    display: grid;
+    place-items: center;
+}
+
+.credentials{
+    background-repeat: no-repeat;
+    width: 60%;
+    max-width: 500px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+}
+.btn{
+    margin: 10px;
+    background-color: #0467ea;
+    color: white;
+    border-style: none;
+    border-radius: 2px;
+    width: 50%;
+    &:hover{
+        background-color: #297be8;
+        cursor: pointer;
+    }
+}
+
+.cta-logo2{
+    width: 100%;
+    image-rendering: pixelated;
+    margin: 10px;
+}
+
+p{
+    font-size: 12px;
+    line-height: 1.5;
+}
