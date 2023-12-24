@@ -1,7 +1,23 @@
 import './stylesheets/Header.css'
 import logo from '../images/logo.svg'
 
+import {getAuth,GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
+import { firebaseApp } from '../Firebase';
 const Header=(props)=>{
+
+   const signInWithGoogle=async()=>{
+        const auth=getAuth(firebaseApp);
+        const provider=new GoogleAuthProvider();
+
+        try{
+            const result=await signInWithPopup(auth, provider);
+            const user=result.user;
+            console.log(user);
+        }catch(error){
+            console.log(error.message);
+        }
+    };
+
     return(
         <div className="header-sec">
         <div className='toolbar'>
@@ -34,7 +50,7 @@ const Header=(props)=>{
                 </span>
             </div>
 
-            <a><h5>SIGN UP</h5></a>
+            <a onClick={signInWithGoogle}><h5>LOGIN</h5></a>
         </div>
     );
 }
