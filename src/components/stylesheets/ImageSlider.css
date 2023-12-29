@@ -1,0 +1,56 @@
+.slider-container{
+    width: 90%;
+    
+}
+
+.slick-dots li {
+  margin: 0 4px; /* Adjust the margin between dots as needed */
+}
+  /* Assuming you have a CSS file where you want to style the dots */
+.slick-dots li button {
+  font-size: 0; /* Hide the text content */
+  background-color: rgb(143, 139, 139); /* Change the background color to white */
+  border: 2px solid #000; /* Add a border for the dots if desired */
+  width: 10px; /* Set the width of each dot */
+  height: 10px; /* Set the height of each dot */
+  border-radius: 50%; /* Create a circular shape */
+  cursor: pointer; /* Add cursor style */
+}
+
+
+  .slick-list {
+    overflow: initial;
+  }
+
+  .slick-prev {
+    left: -75px;
+  }
+
+  .slick-next {
+    right: -75px;
+  }
+
+  
+    a {
+        border-radius: 4px;
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+          rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        padding: 4px;
+        border-style: none;
+    
+        img {
+          width: 98%;
+          height: 100%;
+          image-rendering: pixelated;
+          &:hover {
+          padding: 0;
+          border: 4px solid rgba(249, 249, 249, 0.8);
+          transition-duration: 300ms;
+        }
+        }
+    
+        
+      }
