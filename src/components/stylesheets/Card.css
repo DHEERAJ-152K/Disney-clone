@@ -1,0 +1,11 @@
+.recommended-tile .cardImg{
+   
+   
+   img{
+      margin: 5px;
+      width: 45vh;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: rgb(123, 126, 129);
+   }
+}

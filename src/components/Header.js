@@ -90,7 +90,7 @@ const Header=(props)=>{
                     
                         <h5>Hey, {user.displayName}</h5>
                         <i class="fa-solid fa-right-from-bracket" onClick={signOutWithGoogle}></i>
-                        <img className='profile-picture' src={user.photoURL} alt="Profile" />
+                        <img className='profile-picture' src={user.photoURL} alt='/' />
                     </div>
                 </>
             ) : (

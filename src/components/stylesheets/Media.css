@@ -1,0 +1,12 @@
+.mediaTiles{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+
+.cardImageSec{
+     h3{
+        margin: 20px 40px;
+    }
+}
