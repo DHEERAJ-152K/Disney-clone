@@ -1,0 +1,46 @@
+.detailContainer{
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    .BackgroundImg{
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+        image-rendering: pixelated;
+    }
+
+    .titleImage{
+        width: 35vw;
+        margin: 20px;
+        image-rendering: pixelated;
+    }
+
+}
+
+.movieContext{
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    p{
+        font-size: 15px;
+        text-align: justify;
+    }
+}
+
+button{
+    margin: 0px 5px;
+    border-color: white;
+    color: white;
+    border-style: solid;
+    background-color: transparent;
+    margin: 0px 20px;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 5px;
+}
+.trailer{
+    background-color: rgb(255, 255, 255);
+    color: rgb(11, 11, 11);
+    
+}

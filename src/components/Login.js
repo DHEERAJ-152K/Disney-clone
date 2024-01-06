@@ -11,9 +11,9 @@ const Login=(props)=>{
             <div className='container'>
                 <div className='credentials'>
                     <img className='cta-logo' src={ctaLogo} width='100%'/>
-                    <button className='btn'><p><b>GET ALL THERE</b></p></button>
+                    <button className='btn'><b>GET ALL THERE</b></button>
 
-                    <p>Get Premier Access to Raya and the Last Dragon for an additional fee
+                    <p className='context'>Get Premier Access to Raya and the Last Dragon for an additional fee
                         with a Disney+ subscription. As of 03/26/21, the price of Disney+
                         and The Disney Bundle will increase by $1.
                     </p>

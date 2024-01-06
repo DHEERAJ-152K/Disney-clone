@@ -61,8 +61,9 @@ const Media = (props) => {
       <div className="mediaTiles">
         {recommends.map((recommend) => (
           <Card key={recommend.id}
+          id={recommend.id}
           img={recommend.cardImg} 
-          title={recommend.title}
+          alt={recommend.title}
            />
         ))}
       </div>
@@ -71,8 +72,9 @@ const Media = (props) => {
       <div className="mediaTiles">
         {trending.map((trends) => (
           <Card key={trends.id}
+          id={trends.id}
           img={trends.cardImg} 
-           title={trends.title} />
+           alt={trends.title} />
         ))}
       </div>
 
@@ -80,8 +82,9 @@ const Media = (props) => {
       <div className="mediaTiles">
         {newDisney.map((latest) => (
           <Card key={latest.id}
+          id={latest.id}
           img={latest.cardImg}
-           title={latest.title} />
+           alt={latest.title} />
         ))}
       </div>
 
@@ -89,8 +92,9 @@ const Media = (props) => {
       <div className="mediaTiles">
         {originals.map((original) => (
           <Card key={original.id} 
+          id={original.id}
           img={original.cardImg}
-          title={original.title} />
+          alt={original.title} />
         ))}
       </div>
     </div>

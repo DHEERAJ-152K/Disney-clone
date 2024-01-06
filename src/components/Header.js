@@ -96,7 +96,7 @@ const Header=(props)=>{
             ) : (
                 // Display login/signup links when not logged in
                 <>
-                    <a onClick={signInWithGoogle}><h5>LOGIN</h5></a>
+                    <a className='loginbtn' onClick={signInWithGoogle}>LOGIN</a>
                 </>
             )}
             

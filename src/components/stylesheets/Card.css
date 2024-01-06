@@ -1,11 +1,28 @@
-.recommended-tile .cardImg{
+.recommended-tile{
+      height: 180px;
+} 
+.cardImg{
    
    
    img{
-      margin: 5px;
+      position:sticky;
+      border: 2px;
+      margin: 5px 10px;
       width: 45vh;
       border-radius: 10px;
       border-style: solid;
       border-color: rgb(123, 126, 129);
+      image-rendering: pixelated;
+      &:hover{
+         border: 3px solid rgba(249, 249, 249, 0.8);
+         transition-duration: 500ms;
+         width: 46vh;
+      }
    }
+   
+}
+.link{
+   margin: 0px;
+   padding: 0px;
+   box-shadow: none;
 }
