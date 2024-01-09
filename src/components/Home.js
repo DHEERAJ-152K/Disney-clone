@@ -8,9 +8,10 @@ const Home=(props)=>{
     
     return(
     <div >
-        <Header />
+        
         <div className="home-page">
             <div className="banner">
+            <Header />
             <ImageSlider />
             </div>
             <div>

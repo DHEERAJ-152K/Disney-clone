@@ -18,6 +18,14 @@
          transition-duration: 500ms;
          width: 46vh;
       }
+      @media (max-width:650px) {
+        width: 32vh;
+        &:hover{
+         border: 3px solid rgba(249, 249, 249, 0.8);
+         transition-duration: 500ms;
+         width: 35vh;
+      }
+      }
    }
    
 }

@@ -44,22 +44,29 @@ const Details = (props) => {
     
   }
   return (
-    <div className="detailContainer">
+    <div>
         <Header />
+      <div className="detailContainer">
+        
         <img className="BackgroundImg" src={detailData.backgroundImg} alt="/"/>
         <img className="titleImage" src={detailData.titleImg} alt={detailData.title}/>
-        <div>
-              <button className="trailer"><i class="fa-solid fa-play"></i> PLAY</button>
-              <button className="moviebtn"><i class="fa-solid fa-play"></i> TRAILER</button>
-              <button className='roundbtn' style={style.container}><i class="fa-solid fa-plus"></i></button>
-              <button className='roundbtn' style={style.container}><i class="fa-solid fa-share"></i></button>
-            
+
+        
+
+          <div className="movieContext">
+            <div className="buttons">
+                <button className="trailer"><i class="fa-solid fa-play"></i> PLAY</button>
+                <button className="moviebtn"><i class="fa-solid fa-play"></i> TRAILER</button>
+                <button className='roundbtn' style={style.container}><i class="fa-solid fa-plus"></i></button>
+                <button className='roundbtn' style={style.container}><i class="fa-solid fa-share"></i></button>
+            </div>
+            <p>{detailData.subTitle}</p>
+            <p>{detailData.description}</p>
           </div>
-        <div className="movieContext">
-          <p>{detailData.subTitle}</p>
-          <p>{detailData.description}</p>
-          </div>
+
+      </div>
     </div>
+    
   );
 
   

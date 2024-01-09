@@ -1,13 +1,13 @@
 import './stylesheets/Header.css'
 import logo from '../images/logo.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {getAuth,GoogleAuthProvider, signInWithPopup,signOut} from 'firebase/auth';
 import { firebaseApp } from '../Firebase';
 import { useEffect,useState } from 'react';
 
 
 const Header=(props)=>{
-
+    const navigate=useNavigate();
     const signInWithGoogle=async()=>{            //Signing-In with firebase's google authentication with popup method.
     const auth=getAuth(firebaseApp);
     const provider=new GoogleAuthProvider();
@@ -19,6 +19,8 @@ const Header=(props)=>{
         }catch(error){
             console.log(error.message);
         }
+
+        navigate('/home');
     };
 
     const signOutWithGoogle=async()=>{
@@ -28,6 +30,8 @@ const Header=(props)=>{
         }catch(error){
             console.log(error.message);
         };
+        
+        navigate('/');
     }
     //Fetching data of user and showing it on navbar .
     const [user, setUser] = useState(null);
@@ -53,7 +57,7 @@ const Header=(props)=>{
                     <div className='toolbar'>
                         <img className='logo' src={logo} alt='logo'/>
 
-                        <span >
+                        <span className='tools' >
                         
                         <i class="fa-solid fa-house"></i>
                         <Link className='links' to="/home"><h5>HOME</h5></Link>
