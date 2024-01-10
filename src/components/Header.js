@@ -1,59 +1,56 @@
-import './stylesheets/Header.css'
-import logo from '../images/logo.svg'
+import './stylesheets/Header.css';
+import logo from '../images/logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
-import {getAuth,GoogleAuthProvider, signInWithPopup,signOut, onAuthStateChanged} from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
 import { firebaseApp } from '../Firebase';
-import { useEffect,useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
+const Header = (props) => {
+  const [user, setUser] = useState(null);
+  const userHasRedirected = useRef(false);
+  const navigate = useNavigate();
 
-const Header=(props)=>{
-    const navigate=useNavigate();
-    const signInWithGoogle=async()=>{            //Signing-In with firebase's google authentication with popup method.
-    const auth=getAuth(firebaseApp);
-    const provider=new GoogleAuthProvider();
-
-        try{
-            const result=await signInWithPopup(auth, provider);
-            const user=result.user;
-            console.log(user);
-        }catch(error){
-            console.log(error.message);
-        }
-
-        // navigate('/home');
-    };
-
-    const signOutWithGoogle=async()=>{
-        const auth=getAuth();
-        try{
-            signOut(auth);
-        }catch(error){
-            console.log(error.message);
-        };
-        
-        
-    }
-    //Fetching data of user and showing it on navbar .
-    const [user, setUser] = useState(null);
+  useEffect(() => {
     const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      if (user && !userHasRedirected.current) {
+        userHasRedirected.current = true;
+        
+      }
+    });
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth,(user) => {
-        // Update user state when authentication state changes
-        setUser(user);
+    return () => unsubscribe();
+  }, [navigate]);
 
-        if(user){
-            navigate('/home');
-        }else if(!user){
-            navigate('/');
-        }
-        });
+  const signInWithGoogle = async () => {
+    const auth = getAuth(firebaseApp);
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log(user);
 
-        // Cleanup function to unsubscribe when the component unmounts
-        return () => unsubscribe();
-    }, [auth]);
+      if (user && userHasRedirected.current) {
+        
+        navigate('/home');
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const signOutWithGoogle = async () => {
+    const auth = getAuth();
+    try {
+      await signOut(auth);
+      setUser(null);
+      navigate('/');
+    } catch (error) {
+      console.log(error.message);
+    };
+  };
     
-
     return(
         <div className="header-sec">
             {!user? (<img className='logo' src={logo} alt='logo'/>):<></>}
