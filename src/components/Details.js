@@ -19,7 +19,6 @@ const Details = (props) => {
         if (docSnapshot.exists()) {
           const data = docSnapshot.data();
           setDetailsData(data);
-          console.log('Data:', data);
         } else {
           console.log('Document does not exist');
         }

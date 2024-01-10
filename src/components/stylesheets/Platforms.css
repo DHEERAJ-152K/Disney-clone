@@ -15,8 +15,8 @@
       border-color: rgb(102, 105, 107);
       image-rendering: pixelated;
   
-      @media (max-width: 1200px) {
-        width: 25vh;
+      @media (max-width: 650px) {
+        width: 20vh;
       }
   
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,

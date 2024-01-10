@@ -10,9 +10,9 @@ const Home=(props)=>{
     <div >
         
         <div className="home-page">
-            <div className="banner">
             <Header />
-            <ImageSlider />
+            <div className="banner">
+                <ImageSlider />
             </div>
             <div>
                 <Platforms />

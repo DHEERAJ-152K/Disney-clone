@@ -1,7 +1,7 @@
 import './stylesheets/Header.css'
 import logo from '../images/logo.svg'
 import { Link, useNavigate } from 'react-router-dom';
-import {getAuth,GoogleAuthProvider, signInWithPopup,signOut} from 'firebase/auth';
+import {getAuth,GoogleAuthProvider, signInWithPopup,signOut, onAuthStateChanged} from 'firebase/auth';
 import { firebaseApp } from '../Firebase';
 import { useEffect,useState } from 'react';
 
@@ -20,7 +20,7 @@ const Header=(props)=>{
             console.log(error.message);
         }
 
-        navigate('/home');
+        // navigate('/home');
     };
 
     const signOutWithGoogle=async()=>{
@@ -31,16 +31,22 @@ const Header=(props)=>{
             console.log(error.message);
         };
         
-        navigate('/');
+        
     }
     //Fetching data of user and showing it on navbar .
     const [user, setUser] = useState(null);
     const auth = getAuth();
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user) => {
+        const unsubscribe = onAuthStateChanged(auth,(user) => {
         // Update user state when authentication state changes
         setUser(user);
+
+        if(user){
+            navigate('/home');
+        }else if(!user){
+            navigate('/');
+        }
         });
 
         // Cleanup function to unsubscribe when the component unmounts
@@ -100,7 +106,7 @@ const Header=(props)=>{
             ) : (
                 // Display login/signup links when not logged in
                 <>
-                    <a className='loginbtn' onClick={signInWithGoogle}>LOGIN</a>
+                    <button className='loginbtn' onClick={signInWithGoogle}>LOGIN</button>
                 </>
             )}
             

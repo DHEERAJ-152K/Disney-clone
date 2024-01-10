@@ -1,6 +1,6 @@
 .header-sec{
     position:fixed;
-    height: 70px;
+    height: 10vh;
     width: 100%;
     background-color: rgb(0, 0, 0);   
     display:flex;
@@ -8,7 +8,7 @@
     justify-content: space-between;    
     z-index: 2;
 
-        a{
+    a{
         font-size: 12px;
         border-radius: 10px;
         padding: 10px 15px;
@@ -32,6 +32,10 @@
             cursor: pointer;
         }
     }
+
+    @media (max-width:650px) {
+        height: 8vh;
+    }
 }
 
 .logo{
@@ -45,7 +49,16 @@
 
 
 .loginbtn{
-    border-style: solid;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 20px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 h5{

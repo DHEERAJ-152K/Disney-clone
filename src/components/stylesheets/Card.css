@@ -1,10 +1,8 @@
 .recommended-tile{
-      height: 180px;
 } 
 .cardImg{
-   
-   
    img{
+      
       position:sticky;
       border: 2px;
       margin: 5px 10px;
@@ -19,11 +17,12 @@
          width: 46vh;
       }
       @media (max-width:650px) {
-        width: 32vh;
+        width: 25vh;
+        
         &:hover{
          border: 3px solid rgba(249, 249, 249, 0.8);
          transition-duration: 500ms;
-         width: 35vh;
+         width: 28vh;
       }
       }
    }
